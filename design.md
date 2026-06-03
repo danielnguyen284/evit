@@ -36,7 +36,6 @@ All assets will be copied from `temp/` to the project's relative `assets/` direc
 - **Logo**: `temp/Logo (1).png` -> `assets/logo.png`
 - **Hero Background**: `temp/hero-bg.jpg` -> `assets/hero-bg.jpg`
 - **Card Icon (Target/Checkmark)**: `temp/Icon.png` -> `assets/icon-checkmark.png`
-- **Background Wave Vector**: `temp/Vector (2).png` -> `assets/background-wave.png`
 
 ---
 
@@ -71,10 +70,7 @@ All assets will be copied from `temp/` to the project's relative `assets/` direc
 ### 4.4 Floating Widgets
 - **Calendar Button**: Bottom-right floating button (fixed position). Circular shape, blue/purple gradient background, containing a calendar SVG/icon.
 
-### 4.5 Global Background Wave
-- **Background Pattern**: All pages across the website include the `assets/background-wave.png` vector stretched horizontally in the background. It is centered, positioned absolute, and layered behind all content (z-index: -1) with a soft blend mode to add premium cybernetic neon vibes to the page structure.
 
----
 
 ## 5. Micro-interactions & Visual Effects
 

@@ -21,9 +21,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body>
-        <div className="bg-wave-container">
-          <div className="bg-wave" />
-        </div>
         {children}
       </body>
     </html>
