@@ -1,0 +1,123 @@
+.section {
+  background-color: var(--background);
+  padding: 0 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.frameworkEyebrow {
+  display: block;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--blue-bright);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-bottom: 16px;
+}
+
+.frameworkTitle {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  margin-bottom: 60px;
+}
+
+.frameworkGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.frameworkCard {
+  position: relative;
+  overflow: hidden;
+  min-height: 390px;
+  border: 1.5px solid #0197e7;
+  border-radius: 16px;
+  padding: 36px 34px 34px;
+  background:
+    radial-gradient(circle at 18% 92%, rgba(35, 83, 237, 0.58) 0%, rgba(35, 83, 237, 0.24) 24%, rgba(35, 83, 237, 0) 54%),
+    radial-gradient(circle at 34% 88%, rgba(116, 40, 148, 0.38) 0%, rgba(116, 40, 148, 0.15) 26%, rgba(116, 40, 148, 0) 58%),
+    linear-gradient(135deg, rgba(13, 13, 66, 0.97) 0%, rgba(11, 11, 57, 0.95) 100%);
+  box-shadow: 0 16px 36px rgba(0, 132, 209, 0.18);
+}
+
+.frameworkIcon {
+  display: block;
+  width: 106px;
+  height: 106px;
+  margin-bottom: 42px;
+  object-fit: contain;
+}
+
+.frameworkCardTitle {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 27px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  margin-bottom: 26px;
+}
+
+.frameworkList {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  list-style-position: outside;
+  padding-left: 18px;
+}
+
+.frameworkList li {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 12px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.88);
+  padding-left: 4px;
+}
+
+.frameworkList li::marker {
+  font-size: 0.7em;
+  color: var(--text-primary);
+}
+
+@media (max-width: 1024px) {
+  .frameworkGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .frameworkCard {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-bottom: 80px;
+  }
+
+  .frameworkTitle {
+    font-size: 28px;
+    margin-bottom: 38px;
+  }
+
+  .frameworkCard {
+    padding: 28px 24px 30px;
+    border-radius: 14px;
+  }
+
+  .frameworkIcon {
+    width: 92px;
+    height: 92px;
+    margin-bottom: 36px;
+  }
+
+  .frameworkCardTitle {
+    font-size: 24px;
+    margin-bottom: 22px;
+  }
+}

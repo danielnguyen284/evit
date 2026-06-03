@@ -1,0 +1,132 @@
+.section {
+  background-color: var(--background);
+  padding: 0 0 110px;
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 14%;
+  left: 50%;
+  width: 760px;
+  height: 520px;
+  background:
+    radial-gradient(circle at 22% 34%, rgba(1, 132, 209, 0.16), transparent 38%),
+    radial-gradient(circle at 80% 76%, rgba(107, 52, 168, 0.16), transparent 42%);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.heading {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.eyebrow {
+  display: block;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--blue-bright);
+  letter-spacing: 0.22em;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+.grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+.card {
+  min-height: 116px;
+  border: 1px solid rgba(1, 151, 231, 0.18);
+  border-radius: 14px;
+  padding: 22px 24px;
+  background:
+    radial-gradient(circle at 8% 100%, rgba(35, 83, 237, 0.2) 0%, rgba(35, 83, 237, 0.08) 26%, rgba(35, 83, 237, 0) 58%),
+    linear-gradient(135deg, rgba(11, 11, 57, 0.96) 0%, rgba(8, 8, 46, 0.94) 100%);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.card:hover {
+  border-color: rgba(1, 151, 231, 0.5);
+  box-shadow: 0 16px 32px rgba(1, 132, 209, 0.18);
+  transform: translateY(-2px);
+}
+
+.questionRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 14px;
+}
+
+.questionRow h3 {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.questionRow span {
+  flex: 0 0 auto;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.card p {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.45;
+  color: var(--text-primary);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-bottom: 80px;
+  }
+
+  .heading {
+    margin-bottom: 36px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .card {
+    min-height: auto;
+    padding: 20px;
+  }
+}

@@ -6,14 +6,15 @@ import styles from './About.module.css';
 
 interface CardItem {
   id: number;
-  title: string;
+  line1: string;
+  line2: string;
 }
 
 const cardsData: CardItem[] = [
-  { id: 1, title: 'Right Approach' },
-  { id: 2, title: 'Right Sales Channels' },
-  { id: 3, title: 'Right Service Offerings' },
-  { id: 4, title: 'Right Clients' },
+  { id: 1, line1: 'RIGHT', line2: 'APPROACH' },
+  { id: 2, line1: 'RIGHT', line2: 'SALES CHANNELS' },
+  { id: 3, line1: 'RIGHT', line2: 'SERVICE OFFERINGS' },
+  { id: 4, line1: 'RIGHT', line2: 'CLIENTS' },
 ];
 
 export default function About() {
@@ -32,16 +33,19 @@ export default function About() {
         <div className="about-grid">
           {cardsData.map((card) => (
             <div key={card.id} className="glow-card">
-              <div className={styles.iconCircle}>
+              <div className={styles.iconContainer}>
                 <Image
                   src="/assets/icon-checkmark.png"
                   alt="Checkmark Icon"
-                  width={36}
-                  height={36}
+                  width={84}
+                  height={84}
                   className={styles.iconImage}
                 />
               </div>
-              <h3 className="card-title">{card.title}</h3>
+              <h3 className="card-title">
+                <span className={styles.titleLine1}>{card.line1}</span>
+                <span className={styles.titleLine2}>{card.line2}</span>
+              </h3>
             </div>
           ))}
         </div>

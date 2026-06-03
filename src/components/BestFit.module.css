@@ -1,0 +1,101 @@
+.section {
+  background-color: var(--background);
+  padding: 0 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.fitSection {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.85fr);
+  gap: 56px;
+  align-items: stretch;
+}
+
+.bestFitCard {
+  position: relative;
+  overflow: hidden;
+  border: 1.5px solid #0197e7;
+  border-radius: 22px;
+  padding: 46px 50px;
+  background:
+    radial-gradient(circle at 16% 90%, rgba(35, 83, 237, 0.62) 0%, rgba(35, 83, 237, 0.25) 24%, rgba(35, 83, 237, 0) 54%),
+    radial-gradient(circle at 42% 76%, rgba(109, 45, 150, 0.42) 0%, rgba(109, 45, 150, 0.16) 26%, rgba(109, 45, 150, 0) 58%),
+    linear-gradient(135deg, rgba(15, 15, 75, 0.96) 0%, rgba(12, 12, 63, 0.94) 100%);
+  box-shadow: 0 18px 42px rgba(0, 132, 209, 0.25);
+}
+
+.notFitBlock {
+  padding: 46px 0;
+}
+
+.fitTitle {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.fitList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  list-style-position: outside;
+  padding-left: 20px;
+  color: var(--text-primary);
+}
+
+.fitList li {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.92);
+  padding-left: 4px;
+}
+
+.fitList li::marker {
+  font-size: 0.7em;
+  color: var(--text-primary);
+}
+
+@media (max-width: 1024px) {
+  .fitSection {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .notFitBlock {
+    padding: 0 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-bottom: 80px;
+  }
+
+  .bestFitCard {
+    padding: 34px 26px;
+    border-radius: 18px;
+  }
+
+  .notFitBlock {
+    padding: 0;
+  }
+
+  .fitTitle {
+    font-size: 28px;
+    margin-bottom: 22px;
+  }
+
+  .fitList {
+    gap: 18px;
+  }
+
+  .fitList li {
+    font-size: 13px;
+  }
+}

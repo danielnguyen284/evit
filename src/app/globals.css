@@ -77,13 +77,13 @@ a {
   border-radius: 50px;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(227, 0, 0, 0.2);
+  box-shadow: 0 4px 20px rgba(227, 0, 0, 0.3);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .btn-primary:hover {
   background-color: #ff1a1a;
-  box-shadow: 0 6px 20px rgba(227, 0, 0, 0.5);
+  box-shadow: 0 6px 25px rgba(227, 0, 0, 0.6);
   transform: translateY(-2px);
 }
 
@@ -120,17 +120,21 @@ a {
 
 /* Glow Card Component */
 .glow-card {
-  background: var(--card-bg);
-  border: 1.5px solid var(--card-border);
-  border-radius: 16px;
-  padding: 40px 24px;
+  background:
+    radial-gradient(circle at 52% 18%, rgba(32, 77, 224, 0.48) 0%, rgba(32, 77, 224, 0.2) 22%, rgba(32, 77, 224, 0) 48%),
+    radial-gradient(circle at 68% 42%, rgba(105, 48, 146, 0.28) 0%, rgba(105, 48, 146, 0.12) 22%, rgba(105, 48, 146, 0) 47%),
+    linear-gradient(135deg, #09093d 0%, #10106a 48%, #07072e 100%);
+  border: 1.5px solid #0197e7;
+  border-radius: 24px;
+  aspect-ratio: 1 / 1;
+  padding: 24px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
@@ -139,58 +143,40 @@ a {
 .glow-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -12%;
+  left: 8%;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, rgba(1, 132, 209, 0.15) 0%, transparent 70%);
-  opacity: 0;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(40, 80, 238, 0.12) 0%, rgba(40, 80, 238, 0) 42%),
+    radial-gradient(circle at 72% 54%, rgba(112, 55, 154, 0.1) 0%, rgba(112, 55, 154, 0) 38%);
+  opacity: 0.82;
   transition: opacity 0.3s ease;
   pointer-events: none;
 }
 
 .glow-card:hover {
-  border-color: var(--blue-bright);
-  box-shadow: 0 10px 30px rgba(1, 132, 209, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  border-color: #00d2ff;
+  background:
+    radial-gradient(circle at 52% 18%, rgba(36, 84, 240, 0.56) 0%, rgba(36, 84, 240, 0.24) 22%, rgba(36, 84, 240, 0) 48%),
+    radial-gradient(circle at 68% 42%, rgba(112, 55, 154, 0.32) 0%, rgba(112, 55, 154, 0.14) 22%, rgba(112, 55, 154, 0) 47%),
+    linear-gradient(135deg, #09093d 0%, #10106a 48%, #07072e 100%);
+  box-shadow: 0 15px 40px rgba(1, 132, 209, 0.22), inset 0 1px 1px rgba(255, 255, 255, 0.12);
   transform: translateY(-6px) scale(1.02);
 }
 
 .glow-card:hover::before {
-  opacity: 1;
-}
-
-.glow-card .card-icon-container {
-  width: 64px;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 24px;
-  position: relative;
-  z-index: 1;
-}
-
-.glow-card .card-icon {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.glow-card:hover .card-icon {
-  transform: rotate(360deg) scale(1.1);
+  opacity: 0.62;
 }
 
 .glow-card .card-title {
   font-family: var(--font-inter), sans-serif;
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 800;
   text-transform: uppercase;
   color: var(--text-primary);
   letter-spacing: 0.1em;
-  line-height: 1.4;
+  line-height: 1.3;
   position: relative;
   z-index: 1;
 }
-
-

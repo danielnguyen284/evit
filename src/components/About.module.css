@@ -3,6 +3,31 @@
   padding: 100px 0;
   position: relative;
   text-align: center;
+  overflow: hidden;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 150px;
+  background-image: url('/assets/background-wave-original.png');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  filter: brightness(0) saturate(100%) invert(45%) sepia(97%) saturate(2163%) hue-rotate(175deg) brightness(101%) contrast(103%);
+  mix-blend-mode: screen;
+  opacity: 0.95;
+  pointer-events: none;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.about > :global(.container) {
+  position: relative;
+  z-index: 1;
 }
 
 .category {
@@ -36,33 +61,38 @@
   margin: 0 auto 56px auto;
 }
 
-/* Card custom icons circle */
-.iconCircle {
-  width: 76px;
-  height: 76px;
-  border-radius: 50%;
-  border: 2px solid rgba(227, 0, 0, 0.4);
-  background: rgba(3, 3, 45, 0.4);
+/* Card custom icons container */
+.iconContainer {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 24px;
-  box-shadow: 0 4px 15px rgba(227, 0, 0, 0.1);
-  transition: all 0.3s ease;
   position: relative;
-}
-
-.glow-card:hover .iconCircle {
-  border-color: var(--red-bright);
-  box-shadow: 0 0 20px rgba(227, 0, 0, 0.5);
-  transform: scale(1.05);
+  transition: all 0.3s ease;
 }
 
 .iconImage {
   object-fit: contain;
-  width: 36px;
-  height: 36px;
+  width: 84px;
+  height: 84px;
   transition: transform 0.3s ease;
+}
+
+:global(.glow-card:hover) .iconImage {
+  transform: scale(1.08);
+}
+
+.titleLine1 {
+  display: block;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.titleLine2 {
+  display: block;
+  font-weight: 700;
+  color: var(--text-primary);
 }
 
 .bottomText {
@@ -84,6 +114,12 @@
 @media (max-width: 768px) {
   .about {
     padding: 80px 0;
+  }
+
+  .about::before {
+    height: 110px;
+    background-size: auto 230px;
+    background-position: center bottom;
   }
 
   .title {
