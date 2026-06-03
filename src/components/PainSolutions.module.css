@@ -1,0 +1,189 @@
+.section {
+  padding: 100px 0;
+  position: relative;
+  background-color: var(--background);
+  overflow: hidden;
+}
+
+.rowsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  opacity: 0.95;
+  transition: all 0.5s ease-in-out;
+}
+
+.rowReverse {
+  flex-direction: row-reverse;
+}
+
+/* Column styling */
+.imageCol,
+.textCol {
+  flex: 1;
+  width: 50%;
+}
+
+/* Image Wrapper with glowing effects */
+.imageWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+  padding: 20px;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+  animation: float 6s ease-in-out infinite;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Float Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Custom glows behind the 3D illustrations */
+.imageWrapper::before {
+  content: '';
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  z-index: -1;
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+
+.painGlow::before {
+  background: radial-gradient(circle, var(--red-bright) 0%, transparent 70%);
+}
+
+.solutionGlow::before {
+  background: radial-gradient(circle, var(--blue-bright) 0%, transparent 70%);
+}
+
+/* Hover effects */
+.imageWrapper:hover .image {
+  transform: scale(1.04) translateY(-5px);
+}
+
+.imageWrapper:hover::before {
+  opacity: 0.3;
+  width: 360px;
+  height: 360px;
+}
+
+/* Text styling */
+.label {
+  display: inline-block;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--blue-bright);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+/* Subtle line indicator under the label */
+.label::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: var(--blue-bright);
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+.title {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.desc {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 17px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .row {
+    gap: 40px;
+  }
+  
+  .title {
+    font-size: 32px;
+  }
+
+  .desc {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .rowsContainer {
+    gap: 80px;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  .rowReverse {
+    flex-direction: column-reverse;
+  }
+
+  .imageCol,
+  .textCol {
+    width: 100%;
+  }
+
+  .imageWrapper {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+}
