@@ -1,0 +1,103 @@
+.about {
+  background-color: var(--background);
+  padding: 100px 0;
+  position: relative;
+  text-align: center;
+}
+
+.category {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--blue-bright);
+  letter-spacing: 0.15em;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.title {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 38px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+  margin-bottom: 24px;
+}
+
+.desc {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 860px;
+  margin: 0 auto 56px auto;
+}
+
+/* Card custom icons circle */
+.iconCircle {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  border: 2px solid rgba(227, 0, 0, 0.4);
+  background: rgba(3, 3, 45, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 15px rgba(227, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.glow-card:hover .iconCircle {
+  border-color: var(--red-bright);
+  box-shadow: 0 0 20px rgba(227, 0, 0, 0.5);
+  transform: scale(1.05);
+}
+
+.iconImage {
+  object-fit: contain;
+  width: 36px;
+  height: 36px;
+  transition: transform 0.3s ease;
+}
+
+.bottomText {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin: 48px auto 32px auto;
+  opacity: 0.85;
+}
+
+.ctaContainer {
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about {
+    padding: 80px 0;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .desc {
+    font-size: 14px;
+    padding: 0 16px;
+    margin-bottom: 40px;
+  }
+
+  .bottomText {
+    font-size: 13px;
+    padding: 0 16px;
+  }
+}
