@@ -59,7 +59,6 @@ export default function ServicesPage() {
       {/* Services Hero Section */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
-          <span className={styles.heroEyebrow}>Our Services</span>
           <h1 className={styles.heroTitle}>
             Go Global, Expand<br />Your Reach and Grow Worldwide
           </h1>
