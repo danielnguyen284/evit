@@ -28,7 +28,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className={styles.section}>
+    <section className={`${styles.section} reveal`}>
       <div className="container">
         <div className={styles.layout}>
           <div className={styles.intro}>

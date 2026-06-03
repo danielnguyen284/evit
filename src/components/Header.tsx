@@ -3,12 +3,14 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import styles from './Header.module.css';
 
 export default function Header() {
   const [isSticky, setIsSticky] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState('home');
+  const pathname = usePathname();
+  const [activeLink, setActiveLink] = useState(pathname === '/services' ? 'services' : 'home');
 
   useEffect(() => {
     const handleScrollSticky = () => {
@@ -68,18 +70,18 @@ export default function Header() {
   };
 
   const menuItems = [
-    { id: 'home', label: 'Home', href: '#home' },
-    { id: 'services', label: 'Our Services', href: '#services' },
-    { id: 'case-studies', label: 'Case Studies', href: '#case-studies' },
-    { id: 'resources', label: 'Resources', href: '#resources' },
-    { id: 'about', label: 'About Us', href: '#about' },
+    { id: 'home', label: 'Home', href: '/#home' },
+    { id: 'services', label: 'Our Services', href: '/services' },
+    { id: 'case-studies', label: 'Case Studies', href: '/#case-studies' },
+    { id: 'resources', label: 'Resources', href: '/#resources' },
+    { id: 'about', label: 'About Us', href: '/#about' },
   ];
 
   return (
     <header className={`${styles.header} ${isSticky ? styles.headerSticky : ''}`}>
       <div className={`${styles.navContainer} container`}>
         {/* Logo */}
-        <Link href="#home" className={styles.logo} onClick={() => handleLinkClick('home')}>
+        <Link href="/#home" className={styles.logo} onClick={() => handleLinkClick('home')}>
           <Image
             src="/assets/logo.png"
             alt="EVIT Logo"
@@ -94,17 +96,50 @@ export default function Header() {
         {/* Menu Navigation */}
         <nav>
           <ul className={`${styles.navMenu} ${isMenuOpen ? styles.navMenuActive : ''}`}>
-            {menuItems.map((item) => (
-              <li key={item.id}>
-                <Link
-                  href={item.href}
-                  className={`${styles.navLink} ${activeLink === item.id ? styles.navLinkActive : ''}`}
-                  onClick={() => handleLinkClick(item.id)}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
+            {menuItems.map((item) => {
+              if (item.id === 'services') {
+                return (
+                  <li key={item.id} className={styles.hasDropdown}>
+                    <Link
+                      href={item.href}
+                      className={`${styles.navLink} ${activeLink === item.id ? styles.navLinkActive : ''}`}
+                      onClick={() => handleLinkClick(item.id)}
+                    >
+                      {item.label}
+                      <span className={styles.dropdownArrow}>▼</span>
+                    </Link>
+                    <ul className={styles.dropdownMenu}>
+                      <li>
+                        <Link href="/services#global-expansion" onClick={closeMenu}>
+                          Global Expansion Service
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/services#god-sales-system" onClick={closeMenu}>
+                          G.O.D. Sales System
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/services#marketing-services" onClick={closeMenu}>
+                          Marketing Services
+                        </Link>
+                      </li>
+                    </ul>
+                  </li>
+                );
+              }
+              return (
+                <li key={item.id}>
+                  <Link
+                    href={item.href}
+                    className={`${styles.navLink} ${activeLink === item.id ? styles.navLinkActive : ''}`}
+                    onClick={() => handleLinkClick(item.id)}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
             {/* Mobile View CTA */}
             <li className={styles.rightSectionMobile}>
               <button className="btn-primary" onClick={closeMenu}>

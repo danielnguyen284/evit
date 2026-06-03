@@ -92,7 +92,7 @@ const scrollingStudies = [...studies, ...studies];
 
 export default function CaseStudies() {
   return (
-    <section id="case-studies" className={styles.section}>
+    <section id="case-studies" className={`${styles.section} reveal`}>
       <div className="container">
         <div className={styles.heading}>
           <span className={styles.eyebrow}>Case Studies</span>

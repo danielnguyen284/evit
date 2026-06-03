@@ -48,7 +48,7 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section className={styles.section}>
+    <section className={`${styles.section} reveal`}>
       <div className="container">
         <div className={styles.heading}>
           <span className={styles.eyebrow}>FAQs</span>

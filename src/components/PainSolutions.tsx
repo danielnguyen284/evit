@@ -63,7 +63,7 @@ export default function PainSolutions() {
             return (
               <div
                 key={row.id}
-                className={`${styles.row} ${isReverse ? styles.rowReverse : ''}`}
+                className={`${styles.row} ${isReverse ? styles.rowReverse : ''} reveal`}
               >
                 {/* Image Column */}
                 <div className={styles.imageCol}>

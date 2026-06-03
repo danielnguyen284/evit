@@ -17,7 +17,7 @@ const notFitItems = [
 
 export default function BestFit() {
   return (
-    <section className={styles.section}>
+    <section className={`${styles.section} reveal`}>
       <div className="container">
         <div className={styles.fitSection}>
           <div className={styles.bestFitCard}>

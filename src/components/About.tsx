@@ -19,7 +19,7 @@ const cardsData: CardItem[] = [
 
 export default function About() {
   return (
-    <section id="about" className={styles.about}>
+    <section id="about" className={`${styles.about} reveal`}>
       <div className="container">
         <span className={styles.category}>About Company</span>
         <h2 className={styles.title}>EVIT Organization</h2>

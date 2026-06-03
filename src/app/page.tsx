@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import ScrollReveal from "@/components/ScrollReveal";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import PainSolutions from "@/components/PainSolutions";
@@ -14,6 +15,7 @@ import FloatingCalendar from "@/components/FloatingCalendar";
 export default function Home() {
   return (
     <>
+      <ScrollReveal />
       <Header />
       <main>
         <Hero />

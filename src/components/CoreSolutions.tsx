@@ -50,7 +50,7 @@ const solutions: CoreSolution[] = [
 
 export default function CoreSolutions() {
   return (
-    <section id="services" className={styles.section}>
+    <section id="services" className={`${styles.section} reveal`}>
       <div className="container">
         <div className={styles.heading}>
           <span className={styles.eyebrow}>OUR SERVICES</span>

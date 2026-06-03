@@ -66,7 +66,7 @@ function FrameworkIcon({ type }: { type: FrameworkStep['icon'] }) {
 
 export default function Framework() {
   return (
-    <section id="resources" className={styles.section}>
+    <section id="resources" className={`${styles.section} reveal`}>
       <div className="container">
         <span className={styles.frameworkEyebrow}>HOW IT WORKS</span>
         <h2 className={styles.frameworkTitle}>EVIT 3- STEP FRAMEWORK</h2>
